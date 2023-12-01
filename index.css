@@ -98,6 +98,7 @@ header{
 }
 .navBar li a {
     transition: color 1s ease;
+    color:#000;
 }
 .parte1{
     height: 100vh;
