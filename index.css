@@ -684,7 +684,7 @@ header{
     .habilidade-list{
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        gap: 50px;
+        gap: 100px;
     }
     .project-click-Bank, .project-click-carros, .project-click-av, .project-click-projectB{
         height: 300px;
@@ -704,7 +704,7 @@ header{
     }
     .lista-Idiomas{
         grid-template-columns: repeat(2, 1fr);
-        gap: 75px;
+        gap: 50px;
     }
 
 }
