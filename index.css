@@ -44,7 +44,7 @@ header{
     position: relative;
     cursor: pointer;
     transition: color 0.3s;
-    color: #00f;
+    color: #000;
 }
 .palavra-hover:hover {
     color: #000;
@@ -84,7 +84,6 @@ header{
     font-size: .95rem;
     padding: 0;
     text-decoration: none;
-    color: #000;
 }
 
 @keyframes fadeInUp {
@@ -98,7 +97,6 @@ header{
 }
 .navBar li a {
     transition: color 1s ease;
-    color:#000;
 }
 .parte1{
     height: 100vh;
