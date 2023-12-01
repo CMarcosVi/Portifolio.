@@ -696,6 +696,13 @@ header{
     .project-click-carros:hover, .project-click-av:hover, .project-click-projectB:hover, .project-click-Bank:hover {
         letter-spacing: 2px;
     }
+    .tecnologias-Project > imagse{
+        height: 30px;
+    }
+
+    .habilidade-list > li > imagse{
+        height: 50px;
+    }
     .imagse{
         height: 30px;
     }
