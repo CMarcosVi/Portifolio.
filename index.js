@@ -120,6 +120,23 @@ function initAnimacaoScrollJS() {
 // Chama a função para inicializar a animação de rolagem para elementos com a classe 'js-scroll'
 initAnimacaoScrollJS();
 
+function mostrar(){
+    const containerSobreMim = document.querySelector(".container-sobremim")
+
+
+    if(containerSobreMim.classList.contains("invisivel")){
+        containerSobreMim.classList.remove("invisivel")
+        containerSobreMim.classList.add("aberto")
+    }else{
+        containerSobreMim.classList.remove("aberto")
+        containerSobreMim.classList.add("invisivel")
+    }
+}
+mostrar();
+
+
+
+
 document.addEventListener('DOMContentLoaded', function () {
     const links = document.querySelectorAll('.link');
     const cores = ["cor1", "cor2"]; // Substitua "cor1" e "cor2" pelas classes de cores desejadas
@@ -140,3 +157,5 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     });
   });
+
+

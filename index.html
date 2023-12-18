@@ -3,8 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ola meu nome é marcos e este portifolio foi feito em HTML,CSS e JS">
+    <meta name="author" content="Marcos Vinicius">
     <title>Portifolio</title>
     <link rel="stylesheet" href="index.css">
+    <link rel="icon" href="./2.svg" type="image/x-icon">
 </head>
 <body>
     <header>
@@ -30,7 +33,21 @@
         <div class="list-contatos">
           <a class="sitesC" href="https://github.com/CMarcosVi" target="_blank"><img class="contact" src="./imgs/icons8-github.svg" alt=""/></a>
           <a class="sitesC" href="https://www.linkedin.com/in/marcos-vin%C3%ADcius-259444229/" target="_blank"><img class="contact" src="./imgs/icons8-linkedin.svg" alt=""/></a>
-          <button class="sobremim">sobre mim</button>
+          <button class="sobremim" onclick="mostrar()">sobre mim</button>
+          <div class="container-sobremim invisivel" >
+            <div class="partSuperios ">
+              <h1>Sobre mim</h1>
+              <button class="buttonSuperior" onclick="mostrar()">x</button>
+            </div>
+            <p>Olá,Meu nome é Marcos, sou um estudante assíduo de tecnologia. Atualmente, tenho 19 anos e estou
+               cursando a faculdade de Análise e Desenvolvimento de Sistemas. No entanto, estudo sobre 
+               tecnologia e programação desde os 17 anos, acumulando uma certa bagagem de conhecimento. 
+               Estou sempre procurando obter mais e mais conhecimento na área de tecnologia em geral pois 
+               sou apaixonado por tal assunto. Atualmente, estou em busca 
+               da minha primeira oportunidade na área, seja como Júnior ou estagiário. Afinal, precisamos 
+               começar de algum lugar.
+            </p>
+          </div>
         </div>
       </section>
       <section class="partq2 mudar1 js-scroll" id="Habilidades">
