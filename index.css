@@ -127,7 +127,6 @@ header{
     transition: 1s;
 }
 .container-sobremim{
-    display: none;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
