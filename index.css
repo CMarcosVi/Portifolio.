@@ -141,9 +141,6 @@ header{
     border: 1px solid #000;
     border-radius: .5rem;
     box-shadow: 3px 10px 0px 0px rgba(0,0,0,0.83);
-    visibility: hidden;
-    opacity: 0;
-    transition: opacity 1s, visibility 1s;
 }
 .container-sobremim > p{
     width: 75%;
