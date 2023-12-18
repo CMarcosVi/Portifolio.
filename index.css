@@ -146,10 +146,6 @@ header{
     opacity: 0;
     transition: opacity 1s, visibility 1s;
 }
-.container-sobremim.aberto {
-    visibility: visible;
-    opacity: 1;
-}
 .container-sobremim > p{
     width: 75%;
     font-size: 1rem;
