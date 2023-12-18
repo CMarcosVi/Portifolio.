@@ -132,7 +132,6 @@ function mostrar(){
         containerSobreMim.classList.add("invisivel")
     }
 }
-mostrar();
 
 
 
