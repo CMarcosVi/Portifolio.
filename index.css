@@ -127,10 +127,11 @@ header{
     transition: 1s;
 }
 .container-sobremim{
+    display: none;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    padding: 1rem;
+    padding: .5rem;
     position: absolute;
     transform: translate(-50%, -50%);
     top:50%;
@@ -142,10 +143,12 @@ header{
     border-radius: .5rem;
     box-shadow: 3px 10px 0px 0px rgba(0,0,0,0.83);
 }
+
 .container-sobremim > p{
     width: 75%;
     font-size: 1rem;
     text-align: justify;
+    font-family: sans-serif;
 }
 .partSuperios{
     width: 100%;
@@ -221,16 +224,22 @@ header{
 }
 
 .imagse{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
     list-style: none;
     height: 40px;
     width: 40px;
     color: #fff;
+    text-align: center;
     padding: .1rem;
+    font-size: .6rem;
+    font-family: 'Roboto', sans-serif;
 }
 .habilidade-list{
     display: grid;
-    grid-template-columns: repeat(5, 1fr); 
-    gap: 100px;
+    grid-template-columns: repeat(8, 1fr); 
+    gap: 60px;
     align-items: start;
     padding: 2rem;
 }
@@ -744,6 +753,26 @@ header{
     .imagse{
         height: 35px;
     }
+    .imagse{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        list-style: none;
+        height: 30px;
+        width: 30px;
+        color: #fff;
+        text-align: center;
+        padding: .1rem;
+        font-size: .6rem;
+        font-family: 'Roboto', sans-serif;
+    }
+    .habilidade-list{
+        display: grid;
+        grid-template-columns: repeat(7, 1fr); 
+        gap: 50px;
+        align-items: start;
+        padding: 0rem;
+    }
 }
 @media only screen and (max-width: 690px){
     .totilo{
@@ -751,7 +780,7 @@ header{
     }
     .habilidade-list{
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(4, 1fr);
         gap: 35px;
     }
     .project-click-Bank, .project-click-carros, .project-click-av, .project-click-projectB{
@@ -765,7 +794,8 @@ header{
         letter-spacing: 2px;
     }
     .imagse{
-        height: 30px;
+        height: 25px;
+        font-size: .7rem;
     }
     .project-info{
         width: 90%;
