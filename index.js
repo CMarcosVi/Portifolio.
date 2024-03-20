@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 document.addEventListener('DOMContentLoaded', function () {
     const logo = document.querySelector('.logo');
-    const imagens = ["./1.svg", "./2.svg"];
+    const imagens = ["../imgs/1.svg", "../imgs/2.svg"];
     let indexImagemAtual = 0;
   
     const novaImagem = new Image();

@@ -1,11 +1,11 @@
 @font-face {
     font-family: 'Baron';
-    src: url('./Baron\ Neue.otf') format('woff2'),
-         url('./Baron\ Neue\ Black.otf') format('woff')
-         url('./Baron\ Neue\ Black\ Italic.otf') format('woff2'),
-         url('./Baron\ Neue\ Bold.otf') format('woff2'),
-         url('./Baron\ Neue\ Bold\ Italic.otf') format('woff2'),
-         url('./Baron\ Neue\ Italic.otf') format('woff2'),;
+    src: url('./fonts/Baron\ Neue.otf') format('woff2'),
+         url('./fonts/Baron\ Neue\ Black.otf') format('woff')
+         url('./fonts/Baron\ Neue\ Black\ Italic.otf') format('woff2'),
+         url('./fonts/Baron\ Neue\ Bold.otf') format('woff2'),
+         url('./fonts/Baron\ Neue\ Bold\ Italic.otf') format('woff2'),
+         url('./fonts/Baron\ Neue\ Italic.otf') format('woff2'),;
     font-weight: 2px;
     font-style: normal;
 }
@@ -441,7 +441,7 @@ header{
 .project-click-projectB:hover {
     color: #f00;
     transition: 1s;
-    letter-spacing: 5px;
+    letter-spacing: 2px;
 }
 .titulo-ProjectB-open{
     font-size: 1rem;
