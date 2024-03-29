@@ -1,11 +1,11 @@
 @font-face {
     font-family: 'Baron';
-    src: url('../assets/fonts/Baron-Neue.otf') format('woff2'),
-         url('../assets/fonts/Baron-Neue-Black-Italic.otf') format('woff')
-         url('../assets/fonts/Baron-Neue-Bold-Italic.otf') format('woff2'),
-         url('../assets/fonts/Baron-Neue-Bold.otf') format('woff2'),
-         url('../assets/fonts/Baron-Neue-Italic.otf') format('woff2'),
-         url('../assets/fonts/Baron-Neue.otf') format('woff2'),;
+    src: url('./fonts/Baron-Neue.otf') format('woff2'),
+         url('./fonts/Baron-Neue-Black-Italic.otf') format('woff')
+         url('./fonts/Baron-Neue-Bold-Italic.otf') format('woff2'),
+         url('./fonts/Baron-Neue-Bold.otf') format('woff2'),
+         url('./fonts/Baron-Neue-Italic.otf') format('woff2'),
+         url('./fonts/Baron-Neue.otf') format('woff2'),;
     font-weight: 2px;
     font-style: normal;
 }
@@ -362,25 +362,25 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 #Bank{
-    background-image: url(../assets/imgs/fotosProjetos/bank.png); 
+    background-image: url(./assets/imgs/fotosProjetos/bank.png); 
 }
 #BankCell{
-    background-image: url(../assets/imgs/fotosProjetos/bankCell.png);
+    background-image: url(./assets/imgs/fotosProjetos/bankCell.png);
 }
 #CarrosImgs{
-    background-image: url(../assets/imgs/fotosProjetos/carrosMaisRapidosDoMundo.png); 
+    background-image: url(./assets/imgs/fotosProjetos/carrosMaisRapidosDoMundo.png); 
 }
 #CarrosCell{
-    background-image: url(../assets/imgs/fotosProjetos/CarrosCell.png); 
+    background-image: url(./assets/imgs/fotosProjetos/CarrosCell.png); 
 } 
 #projectAv{
-    background-image: url(../assets/imgs/fotosProjetos/AssistenteVitual.png);
+    background-image: url(./assets/imgs/fotosProjetos/AssistenteVitual.png);
 }
 #projectBDesk{
-    background-image: url(../assets/imgs/fotosProjetos/Project-B.png);
+    background-image: url(./assets/imgs/fotosProjetos/Project-B.png);
 }
 #projectBCell{
-    background-image: url(../assets/imgs/fotosProjetos/ProjectBCell.png);
+    background-image: url(./assets/imgs/fotosProjetos/ProjectBCell.png);
 }
 
 #BankInfo,
