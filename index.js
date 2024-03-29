@@ -20,7 +20,7 @@ const MODAL_PROJECTB = document.getElementById("projectBInfo");
 const BTN_OPEN_MODAL_PROJECTB = document.getElementById("projectB");
 const BTN_CLOSED_MODAL_PROJECTB = document.getElementById("closedProjectb");
 
-const IMAGENS_LOGO = ["../assets/imgs/essential/1.svg", "../assets/imgs/essential/2.svg"];
+const IMAGENS_LOGO = ["./assets/imgs/essential/1.svg", "./assets/imgs/essential/2.svg"];
 const LOGO = document.querySelector('#logoNavBar');
 
 
