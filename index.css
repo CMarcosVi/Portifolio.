@@ -1,11 +1,11 @@
 @font-face {
     font-family: 'Baron';
-    src: url('./fonts/Baron-Neue.otf') format('woff2'),
-         url('./fonts/Baron-Neue-Black-Italic.otf') format('woff')
-         url('./fonts/Baron-Neue-Bold-Italic.otf') format('woff2'),
-         url('./fonts/Baron-Neue-Bold.otf') format('woff2'),
-         url('./fonts/Baron-Neue-Italic.otf') format('woff2'),
-         url('./fonts/Baron-Neue.otf') format('woff2'),;
+    src: url('./assets/fonts/Baron-Neue.otf') format('woff2'),
+         url('./assets/fonts/Baron-Neue-Black-Italic.otf') format('woff')
+         url('./assets/fonts/Baron-Neue-Bold-Italic.otf') format('woff2'),
+         url('./assets/fonts/Baron-Neue-Bold.otf') format('woff2'),
+         url('./assets/fonts/Baron-Neue-Italic.otf') format('woff2'),
+         url('./assets/fonts/Baron-Neue.otf') format('woff2'),;
     font-weight: 2px;
     font-style: normal;
 }
