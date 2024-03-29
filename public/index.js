@@ -1,16 +1,46 @@
-document.addEventListener('DOMContentLoaded', function () {
-    document.querySelector('.conteudo').classList.add('animation-start');
-});
+const BTN_MODAL_ABOUT_ME = document.getElementById("BtnSobreMim");
+const CONTAINER_ABOUT_ME = document.getElementById("containerSobreMim");
+const BTN_CLOSER_MODAL_ABOUT_ME = document.getElementById("buttonSuperior");
+const COLOR_ICON_MUTATION = ["cor1", "cor2"];
+const LINKS_NAV_BAR = document.querySelectorAll('.linkNavBar');
 
-document.addEventListener('DOMContentLoaded', function () {
-    const logo = document.querySelector('.logo');
-    const imagens = ["../assets/imgs/essential/1.svg", "../assets/imgs/essential/2.svg"];
+const MODAL_BANK = document.getElementById("BankInfo");
+const BTN_OPEN_MODAL_BANK = document.getElementById("projectBank");
+const BTN_CLOSED_MODAL_BANK = document.getElementById("closedBank");
+
+const MODAL_CARS = document.getElementById("CarrosInfo");
+const BTN_OPEN_MODAL_CARS = document.getElementById("projectCars");
+const BTN_CLOSED_MODAL_CARS = document.getElementById("closedCars");
+
+const MODAL_AV = document.getElementById("A-VInfo");
+const BTN_OPEN_MODAL_AV = document.getElementById("ProjectVirtualAssistent");
+const BTN_CLOSED_MODAL_AV = document.getElementById("closedAV");
+
+const MODAL_PROJECTB = document.getElementById("projectBInfo");
+const BTN_OPEN_MODAL_PROJECTB = document.getElementById("projectB");
+const BTN_CLOSED_MODAL_PROJECTB = document.getElementById("closedProjectb");
+
+const IMAGENS_LOGO = ["../assets/imgs/essential/1.svg", "../assets/imgs/essential/2.svg"];
+const LOGO = document.querySelector('#logoNavBar');
+
+
+const modalProject = (btnOpen, modal, btnClosed) => {
+    btnOpen.addEventListener("click", () => {
+        modal.style.display = "flex";
+    });
+
+    btnClosed.addEventListener("click", () => {
+        modal.style.display = "none";
+    });
+};
+
+const changeLogoNavBar = () => {
     let indexImagemAtual = 0;
   
     const novaImagem = new Image();
-    novaImagem.src = novaImagem.alt = imagens[indexImagemAtual];
+    novaImagem.src = novaImagem.alt = IMAGENS_LOGO[indexImagemAtual];
     novaImagem.classList.add('dda');
-    logo.appendChild(novaImagem);
+    LOGO.appendChild(novaImagem);
   
     window.addEventListener('scroll', function () {
       const alturaJanela = window.innerHeight;
@@ -18,17 +48,30 @@ document.addEventListener('DOMContentLoaded', function () {
       const quantasVezes100vh = Math.floor(quantidadeScroll / alturaJanela);
   
       if (quantasVezes100vh % 2 !== indexImagemAtual % 2) {
-        novaImagem.src = novaImagem.alt = imagens[++indexImagemAtual % imagens.length];
+        novaImagem.src = novaImagem.alt = IMAGENS_LOGO[++indexImagemAtual % IMAGENS_LOGO.length];
       }
     });
-  });
+}
 
-// Inicializa a animação de rolagem
-function initAnimacaoScroll() {
-    const sections = document.querySelectorAll('.mudar1');
+const toggleVisibilityAboutMe = (buttonOpen, container, buttonCloser) => {
+    buttonOpen.addEventListener("click", () => {
+        if (container.classList.contains("invisible")) {
+            container.classList.remove("invisible");
+            container.classList.add("visible");
+        }
+    });
+    buttonCloser.addEventListener("click", () => {
+        if (container.classList.contains("visible")) {
+            container.classList.remove("visible");
+            container.classList.add("invisible");
+        }
+    })
+}
 
+function initAnimacaoScrollJS() {
+    const sections = document.querySelectorAll('.js-scroll');
     if (sections.length) {
-        const windowMetade = window.innerHeight * 0.9;
+        const windowMetade = window.innerHeight * 0.8;
 
         function animaScroll() {
             sections.forEach((section) => {
@@ -36,9 +79,9 @@ function initAnimacaoScroll() {
                 const isSectionVisible = (sectionTop - windowMetade) < 0;
 
                 if (isSectionVisible) {
-                    section.classList.add('mudar');
+                    section.classList.add('ativo');
                 } else {
-                    section.classList.remove('mudar');
+                    section.classList.remove('ativo');
                 }
             });
         }
@@ -49,11 +92,32 @@ function initAnimacaoScroll() {
     }
 }
 
-// Chama a função para inicializar a animação de rolagem
-initAnimacaoScroll();
-
-// Mostra as informações do projeto
 function mostrarInfoProjeto(projectId) {
+    var projectInfo = document.getElementById(projectId + 'Info');
+    if (projectInfo) {
+        projectInfo.style.display = 'flex';
+    }
+}
+
+const Mutation_Icon = () => {
+    let indexCorAtual = 0;
+  
+    window.addEventListener('scroll', function () {
+      const alturaJanela = window.innerHeight;
+      const quantidadeScroll = window.scrollY;
+      const quantasVezes100vh = Math.floor(quantidadeScroll / alturaJanela);
+  
+      if (quantasVezes100vh % 2 !== indexCorAtual % 2) {
+        indexCorAtual++;
+        indexCorAtual %= COLOR_ICON_MUTATION.length;
+        LINKS_NAV_BAR.forEach(link => link.classList.remove(...COLOR_ICON_MUTATION));
+        LINKS_NAV_BAR.forEach(link => link.classList.add(COLOR_ICON_MUTATION[indexCorAtual]));
+      }
+    });
+}
+
+
+function mostrarInfoProjeto(projectId,btnPress) {
     var projectInfo = document.getElementById(projectId + 'Info');
     if (projectInfo) {
         projectInfo.style.display = 'flex';
@@ -68,93 +132,17 @@ function fecharInfoProjeto(projectId) {
     }
 }
 
-// Inicializa a animação de rolagem para elementos com a classe 'js-scroll'
-function initAnimacaoScrollJS() {
-    const sections = document.querySelectorAll('.js-scroll');
-    if (sections.length) {
-        const windowMetade = window.innerHeight * 0.6;
 
-        function animaScroll() {
-            sections.forEach((section) => {
-                const sectionTop = section.getBoundingClientRect().top;
-                const isSectionVisible = (sectionTop - windowMetade) < 0;
 
-                if (isSectionVisible) {
-                    section.classList.add('ativo');
-                } else {
-                    section.classList.remove('ativo');
-                }
-            });
-        }
-
-        animaScroll();
-
-        window.addEventListener('scroll', animaScroll);
-    }
+const initialization = () => {
+    changeLogoNavBar();
+    initAnimacaoScrollJS();
+    modalProject(BTN_OPEN_MODAL_BANK,MODAL_BANK,BTN_CLOSED_MODAL_BANK);
+    modalProject(BTN_OPEN_MODAL_CARS,MODAL_CARS,BTN_CLOSED_MODAL_CARS);
+    modalProject(BTN_OPEN_MODAL_AV,MODAL_AV,BTN_CLOSED_MODAL_AV);
+    modalProject(BTN_OPEN_MODAL_PROJECTB,MODAL_PROJECTB,BTN_CLOSED_MODAL_PROJECTB);
+    document.addEventListener('DOMContentLoaded', Mutation_Icon)
+    toggleVisibilityAboutMe(BTN_MODAL_ABOUT_ME, CONTAINER_ABOUT_ME, BTN_CLOSER_MODAL_ABOUT_ME);
 }
 
-function initAnimacaoScrollJS() {
-    const sections = document.querySelectorAll('.js-scroll');
-    if (sections.length) {
-        const windowMetade = window.innerHeight * 0.6;
-
-        function animaScroll() {
-            sections.forEach((section) => {
-                const sectionTop = section.getBoundingClientRect().top;
-                const isSectionVisible = (sectionTop - windowMetade) < 0;
-
-                if (isSectionVisible) {
-                    section.classList.add('ativo');
-                } else {
-                    section.classList.remove('ativo');
-                }
-            });
-        }
-
-        animaScroll();
-
-        window.addEventListener('scroll', animaScroll);
-    }
-}
-
-// Chama a função para inicializar a animação de rolagem para elementos com a classe 'js-scroll'
-initAnimacaoScrollJS();
-
-function mostrar(){
-    const containerSobreMim = document.querySelector(".container-sobremim")
-
-
-    if(containerSobreMim.classList.contains("invisivel")){
-        containerSobreMim.classList.remove("invisivel")
-        containerSobreMim.classList.add("aberto")
-    }else{
-        containerSobreMim.classList.remove("aberto")
-        containerSobreMim.classList.add("invisivel")
-    }
-}
-
-
-
-
-document.addEventListener('DOMContentLoaded', function () {
-    const links = document.querySelectorAll('.link');
-    const cores = ["cor1", "cor2"]; // Substitua "cor1" e "cor2" pelas classes de cores desejadas
-    let indexCorAtual = 0;
-  
-    window.addEventListener('scroll', function () {
-      const alturaJanela = window.innerHeight;
-      const quantidadeScroll = window.scrollY;
-      const quantasVezes100vh = Math.floor(quantidadeScroll / alturaJanela);
-  
-      if (quantasVezes100vh % 2 !== indexCorAtual % 2) {
-        indexCorAtual++;
-        indexCorAtual %= cores.length;
-  
-        // Remover todas as classes de cor e adicionar a nova classe
-        links.forEach(link => link.classList.remove(...cores));
-        links.forEach(link => link.classList.add(cores[indexCorAtual]));
-      }
-    });
-  });
-
-
+initialization();

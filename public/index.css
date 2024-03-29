@@ -11,51 +11,46 @@
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;1,100;1,300;1,400&display=swap');
-
 *{
     padding: 0;
     margin: 0;
 }
-body{
-   height: 400vh; 
-}
+/*-----Nav Bar-----*/
 header{
     position: fixed;
     width: 100%;
     z-index:1;
-    backdrop-filter: blur(3px);
-    border-radius: 10rem 10rem;
+    backdrop-filter: blur(5px);
+    border-radius: 1rem 1rem;
 }
-.logo{
-    height: 40px;
-}
-
-.dda{
-    height: 40px;
-}
-#container{
+#containerNavBar{
     display: flex;
     align-items: center;
     width: 100%;
     transform: translateY(20px);
     animation: fadeInUp 1s ease-out forwards;
 }
-.palavra-hover {
+.navBar{
+    list-style: none;
+    margin-top: .5rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.navBar li a {
+    transition: color 1s ease;
+}
+.palavraHover {
     position: relative;
     cursor: pointer;
     transition: color 0.3s;
     color: #00f;
 }
-.palavra-hover:hover {
+.palavraHover:hover {
     color: #000;
 }
-.cor1{
-    color: #000;
-}
-.cor2{
-    color: #fff;
-}
-.palavra-hover::after {
+.palavraHover::after {
     content: '';
     position: absolute;
     width: 100%;
@@ -67,25 +62,28 @@ header{
     transform-origin: bottom right;
     transition: transform 0.3s;
 }
-.palavra-hover:hover::after {
+.palavraHover:hover::after {
     transform: scaleX(1);
     transform-origin: bottom left;
 }
-.navBar{
-    list-style: none;
-    margin-top: .5rem;
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
-.link{
+.linkNavBar{
     font-family: 'Roboto', sans-serif;
     font-size: .95rem;
     padding: 0;
     text-decoration: none;
 }
-
+.cor1{
+    color: #000;
+}
+.cor2{
+    color: #fff;
+}
+#logoNavBar{
+    height: 40px;
+}
+#logoNavBar img{
+    height: 40px;
+}
 @keyframes fadeInUp {
     to {
         opacity: 1;
@@ -95,21 +93,61 @@ header{
         opacity: 0;
     }
 }
-.navBar li a {
-    transition: color 1s ease;
+/*-----Nav Bar-----*/
+
+/*-----Animation Scroll-----*/
+.js-scroll {
+    opacity: 0;
+    transform: translate3d(0, -30px, 0);
+    transition: .7s;
+  }
+  
+.js-scroll.ativo {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+/*-----Animation Scroll-----*/
+
+/*-----Scroll-Bar-----*/
+body::-webkit-scrollbar {
+    width: 7px;
 }
-.parte1{
+body::-webkit-scrollbar-thumb {
+    background-color: #333;
+    border-radius: 1rem;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+}
+/*-----Scroll-Bar-----*/
+
+/*-----Home-----*/
+#Home{
     height: 100vh;
-    display: flex;
-    justify-content:space-evenly;
-    align-items: center;
-}
-.list-contatos{
     display: flex;
     justify-content: space-evenly;
     align-items: center;
 }
-.sobremim{
+
+#titleArea{
+    font-size: 4rem;
+    font-family: 'Baron';
+    font-weight: bold;
+    color: #000;
+}
+.listContatos{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.sitesC,
+.contact{
+    height: 35px;
+    width: 35px;
+    margin: 0rem 1rem;
+}
+#BtnSobreMim{
     margin: 1rem;
     height: 30px;
     background-color: #fff;
@@ -117,48 +155,41 @@ header{
     border-radius: 1rem;
     padding: 0rem 1rem;
     font-family: 'Roboto', sans-serif;
+    font-weight: bold;
     cursor: pointer;
     transition: 1s;
 }
-.sobremim:hover{
+#BtnSobreMim:hover{
     color: #fff;
     background-color: #000;
     border: 1px #000 solid;
     transition: 1s;
 }
-.container-sobremim{
-    display: none;
+
+#containerSobreMim{
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
     padding: .5rem;
     position: absolute;
     transform: translate(-50%, -50%);
     top:50%;
     left: 50%;
-    height: 300px;
+    max-height: 350px;
     width: 50%;
     background-color: #fff;
     border: 1px solid #000;
     border-radius: .5rem;
     box-shadow: 3px 10px 0px 0px rgba(0,0,0,0.83);
 }
-
-.container-sobremim > p{
+#containerSobreMim p{
     width: 75%;
     font-size: 1rem;
     text-align: justify;
     font-family: sans-serif;
 }
-.partSuperios{
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-}
-.partSuperios > h1{
-    font-family: 'Roboto', sans-serif;
-}
-.buttonSuperior{
+
+#buttonSuperior{
     height: 20px;
     width: 20px;
     display: flex;
@@ -171,56 +202,46 @@ header{
     transition: 1s;
 
 }
-.buttonSuperior:hover{
+#buttonSuperior:hover{
     background-color: #fff;
     color: #000;
     border: #000 1px solid;
     border-radius: 0rem .25rem;
     transition: 1s;
 }
-
-
-.aberto{
+.partSuperios{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+.partSuperios > h1{
+    font-family: 'Roboto', sans-serif;
+}
+.visible{
     display: flex;
 }
-.invisivel{
+.invisible{
     display: none;
 }
 
+/*-----Home-----*/
 
-
-
-
-.sitesC{
-    margin: 0rem 1rem;
-}
-.contact{
-    height: 35px;
-}
-.totilo{
-    font-size: 4rem;
-    font-family: 'Baron';
-    animation: fadeInUp 1s ease-out forwards;
-    color: #000;
-    padding-left: 1rem;
-}
+/*-----Skills-----*/
 .partq2{
     height: 100vh;
     display: flex;
     flex-direction: column;
+    justify-content: space-evenly;
     align-items: center;
     background-color: #000;
 }
 .secoes{
     font-family: 'Baron';
     text-align: center;
-    padding: 4rem;
+    padding-top: 4rem;
+    padding-bottom: 2rem;
+    font-size: 2rem;
     color: #fff;
-}
-.mudar{
-    background-color: #000;
-    color: #fff;
-    transition: 1s;
 }
 
 .imagse{
@@ -236,44 +257,137 @@ header{
     font-size: .6rem;
     font-family: 'Roboto', sans-serif;
 }
-.habilidade-list{
+.habilidadeList{
     display: grid;
     grid-template-columns: repeat(8, 1fr); 
     gap: 60px;
     align-items: start;
     padding: 2rem;
 }
-.sub-habilidades{
-    display: flex;
-    justify-content: start;
-    align-items: center;
-    margin: 3rem;
+/*-----Skills-----*/
 
-}
-.titulo-habilidades{
-    width: 200px;
-    font-size: 1rem;
-    color: #fff;
-    font-family: 'Baron';
-    
-}
+/*-----Projects-----*/
 .partq3 {
     height: 100vh;
     background-color: #fff;
     display: flex;
     flex-direction: column;
+    justify-content: space-evenly;
     align-items: center;
 }
-.title-projects {
+.titleProjects {
     font-family: 'Baron';
     text-align: center;
     padding: 4rem;
+    font-size: 2rem;
 }
-.projetos-lista {
+.projetcsList{
     width: 100%;
     display: flex;
+    justify-content: space-evenly;
+}
+.ProjetoName{
+    margin: .25rem;
+}
+.projectClickCarros,
+.projectClickAv,
+.projectClickProjectB,
+.projectClickBank{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 400px;
+    width: 100px;
+    background-color: #222;
+    color: #888;
+    font-family: 'Baron';
+    -moz-transform: skew(-17deg, 0deg);
+    -webkit-transform: skew(-17deg, 0deg);
+    -o-transform: skew(-17deg, 0deg);
+    -ms-transform: skew(-17deg, 0deg);
+    transform: skew(-10deg, 0deg);
+    transition: 1s;
+    cursor: pointer;
+}
+
+.projectClickCarros:hover,
+.projectClickProjectB:hover,
+.projectClickAv:hover,
+.projectClickBank:hover{
+    transition: 1s;
+    letter-spacing: 1px;
+}
+.projectClickCarros:hover{
+    color: #49009c;
+}
+.projectClickAv:hover {
+    color: #fff;
+}
+.projectClickProjectB:hover {
+    color: #f00;
+}
+.projectClickBank:hover {
+    color: #0f4;
+}
+
+.projectInfo {
+    position: absolute;
+    flex-direction: column;
     justify-content: space-around;
-    
+    align-items: center;
+    top: 250%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #111;
+    border:1px #000 solid ;
+    height: 500px;
+    min-width: 820px;
+    width: 75%;
+    max-width: 1150px;
+    border-radius: .5rem 0rem;
+}
+
+#Bank,
+#CarrosImgs,
+#projectAv,
+#projectB{
+    background-size: cover;
+}
+#BankCell,
+#CarrosCell,
+#projectBCell{
+    background-size: cover;
+    border-radius: 0;
+}
+
+#Bank{
+    background-image: url(../assets/imgs/fotosProjetos/bank.png); 
+}
+#BankCell{
+    background-image: url(../assets/imgs/fotosProjetos/bankCell.png);
+}
+#CarrosImgs{
+    background-image: url(../assets/imgs/fotosProjetos/carrosMaisRapidosDoMundo.png); 
+}
+#CarrosCell{
+    background-image: url(../assets/imgs/fotosProjetos/CarrosCell.png); 
+} 
+#projectAv{
+    background-image: url(../assets/imgs/fotosProjetos/AssistenteVitual.png);
+}
+#projectBDesk{
+    background-image: url(../assets/imgs/fotosProjetos/Project-B.png);
+}
+#projectBCell{
+    background-image: url(../assets/imgs/fotosProjetos/ProjectBCell.png);
+}
+
+#BankInfo,
+#CarrosInfo,
+#A-VInfo,
+#projectBInfo{
+    display: none;
 }
 .celular{
     display: flex;
@@ -285,13 +399,6 @@ header{
     border-top:solid 10px #000;
     border-bottom:solid 10px #000;
     background-size: cover;
-}
-.superios{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    border-radius: 1.5rem;
 }
 .tablet{
     display: flex;
@@ -305,8 +412,12 @@ header{
     border-radius: 1rem;
     border:solid 5px #000;
 }
-.ProjetoName{
-    margin: .25rem;
+.superios{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    border-radius: 1.5rem;
 }
 #tituloBank{
     font-family: 'Baron';
@@ -315,135 +426,45 @@ header{
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
-#Bank{
-    background-image: url(./imgs/fotosProjetos/bank.png); 
-    background-size: cover;
-}
-#BankCell{
-    background-image: url(./imgs/fotosProjetos/bankCell.png);
-    background-size: cover;
-    border-radius: 0;
-}
-.especificacoes-titlo-bank{
-    color: #0f4;
-    text-align: center;
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 1.5rem;
-}
 #tituloCarros{
     color: #49009c;
     font-family: 'Baron';
     font-style: none;
 }
-#CarrosImgs{
-    background-image: url(./imgs/fotosProjetos/carrosMaisRapidosDoMundo.png); 
-    background-size: cover;
-    
-}
-#CarrosCell{
-    background-image: url(./imgs/fotosProjetos/CarrosCell.png); 
-    background-size: cover;
-    border-radius: 0;
-} 
-
-.especificacoes-titlo-carros{
-    color: #49009c;
-    text-align: center;
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 1.5rem;
-}
-.titulo-carros-open{
-    font-size: 1rem;
-    -moz-transform: rotate(100deg) skew(-17deg, 0deg);
-    -webkit-transform: rotate(100deg) skew(-17deg, 0deg);
-    -o-transform: rotate(100deg) skew(-17deg, 0deg);
-    -ms-transform: rotate(100deg) skew(-17deg, 0deg);
-    transform: rotate(270deg) skew(-17deg, 0deg);
-}
-.project-click-carros {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
-    height: 400px;
-    width: 100px;
-    background-color: #222;
-    color: #888;
-    font-family: 'Baron';
-    -moz-transform: skew(-17deg, 0deg);
-    -webkit-transform: skew(-17deg, 0deg);
-    -o-transform: skew(-17deg, 0deg);
-    -ms-transform: skew(-17deg, 0deg);
-    transform: skew(-10deg, 0deg);
-    transition: 1s;
-    cursor: pointer;
-}
-.project-click-carros:hover{
-    color: #49009c;
-    transition: 1s;
-    letter-spacing: 5px;
-}
 #tituloAv{
     color: #fff;
     font-family: 'Baron';
+    font-style: none;
 }
-#projectAv{
-    background-image: url(./imgs/fotosProjetos/AssistenteVitual.png);
-    background-size: cover;
+#ProjectB-title{
+    color: #f00;
+    font-family: 'Baron';
 }
-.especificacoes-titlo-av{
+.especificacoesTitloBank{
+    color: #0f4;
+    text-align: center;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1.5rem;
+}
+.especificacoesTitleCarros{
+    color: #49009c;
+    text-align: center;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1.5rem;
+}
+.especificacoesTitleAv{
     color: #fff;
     text-align: center;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 1.5rem;
 }
-.project-click-av {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
-    height: 400px;
-    width: 100px;
-    background-color: #222;
-    color: #888;
+.especificacoesTitleProjectB{
     font-family: 'Baron';
-    -moz-transform: skew(-17deg, 0deg);
-    -webkit-transform: skew(-17deg, 0deg);
-    -o-transform: skew(-17deg, 0deg);
-    -ms-transform: skew(-17deg, 0deg);
-    transform: skew(-10deg, 0deg);
-    transition: 1s;
-    cursor: pointer;
-}
-.project-click-av:hover {
-    color: #fff;
-    transition: 1s;
-    letter-spacing: 5px;
-}
-.project-click-projectB {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
-    height: 400px;
-    width: 100px;
-    background-color: #222;
-    color: #888;
-    font-family: 'Baron';
-    -moz-transform: skew(-17deg, 0deg);
-    -webkit-transform: skew(-17deg, 0deg);
-    -o-transform: skew(-17deg, 0deg);
-    -ms-transform: skew(-17deg, 0deg);
-    transform: skew(-10deg, 0deg);
-    transition: 1s;
-    cursor: pointer;
-}
-.project-click-projectB:hover {
     color: #f00;
-    transition: 1s;
-    letter-spacing: 5px;
+    text-align: center;
+    font-size: 1.2rem;
 }
-.titulo-ProjectB-open{
+.titleProjectsModify{
     font-size: 1rem;
     -moz-transform: rotate(100deg) skew(-17deg, 0deg);
     -webkit-transform: rotate(100deg) skew(-17deg, 0deg);
@@ -451,79 +472,25 @@ header{
     -ms-transform: rotate(100deg) skew(-17deg, 0deg);
     transform: rotate(270deg) skew(-17deg, 0deg);
 }
-#tituloPb{
-    font-family: 'Astloch', cursive;
-    color: #f00;
-}
-#projectB{
-    background-image: url(./imgs/fotosProjetos/Project-B.png);
-    background-size: cover;
-}
-#projectBCell{
-    background-image: url(./imgs/fotosProjetos/ProjectBCell.png);
-    background-size: cover;
-    border-radius: 0;
-}
-.project-click-Bank {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
-    height: 400px;
-    width: 100px;
-    background-color: #222;
-    color: #888;
-    font-family: 'Baron';
-    -moz-transform: skew(-17deg, 0deg);
-    -webkit-transform: skew(-17deg, 0deg);
-    -o-transform: skew(-17deg, 0deg);
-    -ms-transform: skew(-17deg, 0deg);
-    transform: skew(-10deg, 0deg);
-    transition: 1s;
-    cursor: pointer;
-}
-.project-click-Bank:hover {
-    color: #0f4;
-    transition: 1s;
-    letter-spacing: 5px;
-}
-
-.titulo-Bank-open {
-    font-size: 1rem;
-    -moz-transform: rotate(100deg) skew(-17deg, 0deg);
-    -webkit-transform: rotate(100deg) skew(-17deg, 0deg);
-    -o-transform: rotate(100deg) skew(-17deg, 0deg);
-    -ms-transform: rotate(100deg) skew(-17deg, 0deg);
-    transform: rotate(270deg) skew(-17deg, 0deg);
-}
-.tecnologias-Project {
+.tecnologiasProject{
     display: flex;
     flex-direction: column;
     justify-self: center;   
-}
-.project-info {
-    position: absolute;
-    display: none;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    top: 250%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #111;
-    border:1px #000 solid ;
-    height: 500px;
-    width: 950px;
-    border-radius: .5rem 0rem;
 }
 .especificacoes{
     display: flex;
     flex-direction: column;
 }
-.explicacoes-project{
+.explicacoesProject{
     width: 300px;
+    color: #fff;
+    text-align:justify;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
-.botao-fechar{
+.botaoFecharBank,
+.botaoFecharCarros,
+.botaoFecharAv,
+.botaoFecharPb{
     background-color: #000;
     color:#fff ;
     border:1px solid #fff;
@@ -532,277 +499,226 @@ header{
     border-radius: .25rem 0rem;
     transition: 1s;
 }
-.tecnologias-info-projects{
+.botaoFecharBank:hover{
+    border:1px solid #0f4;
+    border-radius: 0rem .25rem;
+    transition: 1s;
+}
+.botaoFecharCarros:hover{
+    border:1px solid #49009c;
+    border-radius: 0rem .25rem;
+    transition: 1s;
+}
+.botaoFecharAv:hover{
+    border:1px solid #aaa;
+    border-radius: 0rem .25rem;
+    transition: 1s;
+}
+.botaoFecharPb:hover{
+    border:1px solid #f00;
+    border-radius: 0rem .25rem;
+    transition: 1s;
+}
+.tecnologiasInfoProjects{
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.especificacoes-titlo{
-    color: #0f4;
-    text-align: center;
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 1.5rem;
+.botaoFechar{
+    background-color: #000;
+    color:#fff ;
+    border:1px solid #fff;
+    height: 20px;
+    width: 20px;
+    border-radius: .25rem 0rem;
+    transition: 1s;
 }
-.explicacoes-project{
-    color: #fff;
-    text-align:justify;
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+.caixaBotaoFechar{
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
 }
 .separacao{
     display: flex;
     justify-content: space-evenly;
     width: 100%;
 }
-.caixa-botao-fechar{
-    display: flex;
-    justify-content: space-between;
-    width: 80%;
-}
-.botao-fechar:hover{
-    border:1px solid #0f4;
-    border-radius: 0rem .25rem;
-    transition: 1s;
-}
-.titulo-Bank{
+.tituloBank{
     color: #0f4;
     font-family: 'Baron';
 }
-#ProjectB-title{
-    color: #f00;
-    font-family: 'Baron';
-}
-.especificacoes-titlo-ProjectB{
-    font-family: 'Baron';
-    color: #f00;
-    text-align: center;
-    font-size: 1.2rem;
-}
+/*-----Projects-----*/
 
-.botao-fechar-bank{
-    background-color: #000;
-    color:#fff ;
-    border:1px solid #fff;
-    height: 20px;
-    width: 20px;
-    border-radius: .25rem 0rem;
-    transition: 1s;
-}
-.botao-fechar-bank:hover{
-    border:1px solid #0f4;
-    border-radius: 0rem .25rem;
-    transition: 1s;
-}
-
-.botao-fechar-carros{
-    background-color: #000;
-    color:#fff ;
-    border:1px solid #fff;
-    height: 20px;
-    width: 20px;
-    border-radius: .25rem 0rem;
-    transition: 1s;
-}
-.botao-fechar-carros:hover{
-    border:1px solid #49009c;
-    border-radius: 0rem .25rem;
-    transition: 1s;
-}
-
-.botao-fechar-av{
-    background-color: #000;
-    color:#fff ;
-    border:1px solid #fff;
-    height: 20px;
-    width: 20px;
-    border-radius: .25rem 0rem;
-    transition: 1s;
-}
-.botao-fechar-av:hover{
-    border:1px solid #aaa;
-    border-radius: 0rem .25rem;
-    transition: 1s;
-}
-.botao-fechar-Pb{
-    background-color: #000;
-    color:#fff ;
-    border:1px solid #fff;
-    height: 20px;
-    width: 20px;
-    border-radius: .25rem 0rem;
-    transition: 1s;
-}
-.botao-fechar-Pb:hover{
-    border:1px solid #f00;
-    border-radius: 0rem .25rem;
-    transition: 1s;
-}
-
+/*-----Idiomas-----*/
 
 #idiomas{
     display: flex;
     flex-direction: column;
+    justify-content: space-evenly;
     align-items: center;
     height: 100vh;
     background-color: #000;
 }
-.titulo-idiomas{
+.pointer{
+    width: 20px;
+    height: 7px;
+    background-color: #333;
+    margin: 2px;
+}
+.levelSkillLenguage{
+    display: flex;
+    justify-content: space-around;
+}
+.pointerChecked{
+    background-color: #fff;
+    -webkit-box-shadow: 0px 1px 23px 1px rgba(255,255,255,0.75);
+    -moz-box-shadow: 0px 1px 23px 1px rgba(255,255,255,0.75);
+    box-shadow: 0px 1px 23px 1px rgba(255,255,255,0.75);
+    width: 20px;
+    height: 7px;
+    margin: 2px;
+}
+.listaIdiomas{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 100px;
+}
+.listaIdiomas > li{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.tituloIdiomas{
     color: #fff;
     text-align: center;
-    padding: 4rem;
     font-family: 'Baron';
+    font-size: 2rem;
 }
 
 .imgsIdiomas{
     height: 50px;
 }
-
-.lista-Idiomas{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 100px;
-}
-.lista-Idiomas > li{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.Portugues{
+.lenguage{
     letter-spacing: 2px;
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    color: #ff0;
-    font-size: 1rem;
-}
-
-.Espanhol{
-    letter-spacing: 2px;
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    color: #f00;
-    font-size: 1rem;
-}
-
-.Ingles{
-    letter-spacing: 2px;
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    color: #00f;
-    font-size: 1rem;
-}
-
-.Italiano{
-    letter-spacing: 2px;
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    color: #0f4;
-    font-size: 1rem;
-}
-
-.libras{
-    letter-spacing: 2px;
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: 'Baron';
     color: #fff;
     font-size: 1rem;
+    padding: 1rem 0rem;
 }
+.LevelNamelenguage{
+    font-size: 1rem;
+    font-family: 'Baron';
+    color: #fff;
 
-.js-scroll {
-    opacity: 0;
-    transform: translate3d(0, -30px, 0);
-    transition: .7s;
-  }
-  
-.js-scroll.ativo {
-    opacity: 1;
-    transform: translate3d(0, 0, 0);
-  }
+}
+/*-----Idiomas-----*/
 
-@media only screen and (max-width: 970px){
-    .container-sobremim{
-        height: 400px;
-        width: 90%;
+/*-----Media-Query-----*/
+@media only screen and (max-width: 840px){
+    .listaIdiomas{
+        display: grid;
+        grid-template-columns: 1fr 1fr ;
+        gap: 50px;
     }
-    .parte1{
-        flex-direction: column;
+    #Home{
         justify-content: center;
-    }
-    .project-info{
-        display: none;
         flex-direction: column;
-        height: 500px;
-        width: 70%;
     }
-    #ProjectB-title, #tituloCarros, #titulo-Bank,#tituloAv{
-        font-size: 1rem;
+    #containerSobreMim{
+        max-height: 425px;
+        width: 75%
     }
-    .separacao{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+    #containerSobreMim p{
+        font-size: .8rem;
+        
     }
-    .explicacoes-project{
-        text-align: justify;
-        font-size: .9rem;
+    .titleProjectsModify{
+        width: 80px;
+    }
+    .explicacoesProject{
+        font-size: .75rem;
     }
     .tablet{
         height: 120px;
         width: 213px;
     }
+    .projectInfo {
+        height: 450px;
+        min-width: 550px;
+        width: 75%;
+        border-radius: .5rem 0rem;
+    }
     .celular{
         height: 88px;
         width: 50px;
     }
-    .especificacoes-titlo-ProjectB, .especificacoes-titlo-carros, .especificacoes-titlo-bank, .especificacoes-titlo-av{
-        font-size: .8rem;
+    .habilidadeList{
+        display: grid;
+        grid-template-columns: repeat(5, 1fr); 
+        gap: 3rem;
+        font-size: .5rem;
+        align-items: start;
+        padding: 2rem;
     }
     .imagse{
-        height: 35px;
-    }
-    .imagse{
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        list-style: none;
         height: 30px;
         width: 30px;
-        color: #fff;
-        text-align: center;
-        padding: .1rem;
-        font-size: .6rem;
-        font-family: 'Roboto', sans-serif;
     }
-    .habilidade-list{
-        display: grid;
-        grid-template-columns: repeat(7, 1fr); 
-        gap: 50px;
-        align-items: start;
-        padding: 0rem;
+    .projectClickCarros,
+    .projectClickAv,
+    .projectClickProjectB,
+    .projectClickBank{
+        width: 75px;
     }
-}
-@media only screen and (max-width: 690px){
-    .totilo{
-        font-size: 3rem;
-    }
-    .habilidade-list{
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 35px;
-    }
-    .project-click-Bank, .project-click-carros, .project-click-av, .project-click-projectB{
-        height: 300px;
-        width: 50px;
-    }
-    .titulo-Bank-open, .titulo-Bank-open, .titulo-carros-open, .titulo-ProjectB-open{
+    .titleProjectsModify{
         font-size: .8rem;
     }
-    .project-click-carros:hover, .project-click-av:hover, .project-click-projectB:hover, .project-click-Bank:hover {
-        letter-spacing: 2px;
+}
+
+@media only screen and (max-width: 570px){
+    .projectInfo {
+        height: 450px;
+        min-width: 360px;
+        width: 85%;
+        border-radius: .5rem 0rem;
     }
-    .imagse{
-        height: 25px;
-        font-size: .7rem;
+    .separacao{
+        flex-direction: column;
+        align-items: center;
     }
-    .project-info{
-        width: 90%;
-    }
-    .lista-Idiomas{
-        grid-template-columns: repeat(2, 1fr);
-        gap: 50px;
+    .projectClickCarros,
+    .projectClickAv,
+    .projectClickProjectB,
+    .projectClickBank{
+        width: 65px;
     }
 
 }
+
+@media only screen and (max-width: 450px){
+    .habilidadeList{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr); 
+        gap: 2rem 3rem;
+        font-size: .5rem;
+        align-items: start;
+    }
+    .imagse{
+        height: 30px;
+        width: 30px;
+    }
+    .secoes{
+        font-family: 'Baron';
+        text-align: center;
+        padding-top: 4rem;
+        padding-bottom: 1rem;
+        color: #fff;
+    }
+    .projectClickCarros,
+    .projectClickAv,
+    .projectClickProjectB,
+    .projectClickBank{
+        width: 45px;
+    }
+}
+/*-----Media-Query-----*/
