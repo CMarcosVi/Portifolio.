@@ -23,6 +23,7 @@ const BTN_CLOSED_MODAL_PROJECTB = document.getElementById("closedProjectb");
 const IMAGENS_LOGO = ["./assets/imgs/essential/1.svg", "./assets/imgs/essential/2.svg"];
 const LOGO = document.querySelector('#logoNavBar');
 
+const ICON_POINTER_SCROLL = document.getElementById("mouseContainer");
 
 const modalProject = (btnOpen, modal, btnClosed) => {
     btnOpen.addEventListener("click", () => {
@@ -71,7 +72,7 @@ const toggleVisibilityAboutMe = (buttonOpen, container, buttonCloser) => {
 function initAnimacaoScrollJS() {
     const sections = document.querySelectorAll('.js-scroll');
     if (sections.length) {
-        const windowMetade = window.innerHeight * 0.8;
+        const windowMetade = window.innerHeight * 0.90;
 
         function animaScroll() {
             sections.forEach((section) => {
@@ -132,9 +133,18 @@ function fecharInfoProjeto(projectId) {
     }
 }
 
-
+function invisiblePointerMouse(){
+    var posicaoDoScroll = window.scrollY || window.pageYOffset;
+    if(posicaoDoScroll  >= 2){
+        ICON_POINTER_SCROLL.style.opacity = '0'
+        ICON_POINTER_SCROLL.style.transition = '.5s'
+    }else{
+        ICON_POINTER_SCROLL.style.opacity = '1'
+    }
+}
 
 const initialization = () => {
+    window.addEventListener('scroll', invisiblePointerMouse)
     changeLogoNavBar();
     initAnimacaoScrollJS();
     modalProject(BTN_OPEN_MODAL_BANK,MODAL_BANK,BTN_CLOSED_MODAL_BANK);

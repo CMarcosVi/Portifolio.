@@ -94,7 +94,39 @@ header{
     }
 }
 /*-----Nav Bar-----*/
-
+/*-----Mouse animation-----*/
+#mouseContainer{
+    position: fixed;
+    top: 50%;
+    left: 95%;
+}
+.mouse{
+    display: flex;
+    justify-content: center;
+    height: 40px;
+    width: 20px;
+    border-radius: 1rem;
+    border: 2px solid #000;
+}
+.pointerMouse{
+    position: relative;
+    border-radius: 1rem;
+    height: 15px;
+    width: 15px;
+    background-color: #000;
+    animation: 1.5s mousePointerAnimation infinite;
+}
+@keyframes mousePointerAnimation {
+    0%{
+        top: 0%;
+        opacity: 1;
+    }
+    100%{
+        top: 100%;
+        opacity: 0;
+    }
+}
+/*-----Mouse animation-----*/
 /*-----Animation Scroll-----*/
 .js-scroll {
     opacity: 0;
@@ -334,9 +366,9 @@ body::-webkit-scrollbar-thumb:hover {
 .projectInfo {
     position: absolute;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
-    top: 250%;
+    top: 260%;
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: #111;
@@ -346,6 +378,7 @@ body::-webkit-scrollbar-thumb:hover {
     width: 75%;
     max-width: 1150px;
     border-radius: .5rem 0rem;
+    z-index: 99;
 }
 
 #Bank,
@@ -362,7 +395,8 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 #Bank{
-    background-image: url(./assets/imgs/fotosProjetos/bank.png); 
+    background-image: url(./assets/imgs/fotosProjetos/Bcommerce.png); 
+    background-size: 100% 100%;
 }
 #BankCell{
     background-image: url(./assets/imgs/fotosProjetos/bankCell.png);
@@ -465,7 +499,7 @@ body::-webkit-scrollbar-thumb:hover {
     font-size: 1.2rem;
 }
 .titleProjectsModify{
-    font-size: 1rem;
+    font-size: .8rem;
     -moz-transform: rotate(100deg) skew(-17deg, 0deg);
     -webkit-transform: rotate(100deg) skew(-17deg, 0deg);
     -o-transform: rotate(100deg) skew(-17deg, 0deg);
@@ -480,12 +514,45 @@ body::-webkit-scrollbar-thumb:hover {
 .especificacoes{
     display: flex;
     flex-direction: column;
+    padding: 1rem;
 }
+#Carros .explicacoesProject{
+    border: 2px solid #49009c;
+}
+#A-VInfo .explicacoesProject{
+    border: 2px solid #fff;
+}
+#Project-B .explicacoesProject{
+    border: 2px solid #f00;
+}
+
 .explicacoesProject{
+    border: 2px solid #0f4;
+    max-height: 400px;
     width: 300px;
     color: #fff;
     text-align:justify;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: #000;
+    padding: .4rem;
+    border-radius: .25rem;
+}
+.explicacoesProject h2{
+    margin-top: .5rem;
+    text-align: center;
+    color: #0f4;
+}
+.listTecProject{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+.listTecProject li{
+    list-style: circle;
+}
+.btnLinkGithubProject{
+    display: flex;
+    margin: .5rem;
 }
 .botaoFecharBank,
 .botaoFecharCarros,
@@ -498,6 +565,7 @@ body::-webkit-scrollbar-thumb:hover {
     width: 20px;
     border-radius: .25rem 0rem;
     transition: 1s;
+    cursor: pointer;
 }
 .botaoFecharBank:hover{
     border:1px solid #0f4;
@@ -521,8 +589,13 @@ body::-webkit-scrollbar-thumb:hover {
 }
 .tecnologiasInfoProjects{
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin: 1rem 0rem;
+}
+.tecnologiasInfoProjects div{
+    display: flex;
 }
 .botaoFechar{
     background-color: #000;
@@ -537,15 +610,65 @@ body::-webkit-scrollbar-thumb:hover {
     display: flex;
     justify-content: space-between;
     width: 80%;
+    align-items: center;
 }
 .separacao{
     display: flex;
     justify-content: space-evenly;
+    align-items: center;
     width: 100%;
 }
 .tituloBank{
     color: #0f4;
     font-family: 'Baron';
+}
+.btnsLinksProjects{
+    display: flex;
+}
+.linkProjectbtn,
+.linkDocumentationtbtn,
+.linkProjectcars,
+.linkProjectPp,
+.linkProjectIa{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 15px;
+    padding: .25rem 1rem;
+    background-color: #fff;
+    border-radius: 1rem;
+    cursor: pointer;
+    text-decoration: none;
+    color: #000;
+    transition: 1s;
+    margin: 0rem 1rem;
+}
+.linkProjectbtn img,
+.linkProjectcars img,
+.linkProjectPp img,
+.linkProjectIa img{
+    height: 15px;
+}
+.linkDocumentationtbtn:hover{
+    color: #000;
+    background-color: #0f4;
+    transition: 1s;
+}
+.linkProjectbtn:hover{
+    color: #000;
+    background-color: #0f4;
+    transition: 1s;
+}
+.linkProjectcars:hover{
+    color: #000;
+    background-color: #49009c;
+    transition: 1s;
+}
+.linkProjectPp:hover{
+    color: #000;
+    background-color: #f00;
+    transition: 1s;
 }
 /*-----Projects-----*/
 
@@ -677,7 +800,7 @@ body::-webkit-scrollbar-thumb:hover {
 
 @media only screen and (max-width: 570px){
     .projectInfo {
-        height: 450px;
+        height: 500px;
         min-width: 360px;
         width: 85%;
         border-radius: .5rem 0rem;
@@ -696,6 +819,9 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 @media only screen and (max-width: 450px){
+    #mouseContainer{
+        display: none;
+    }
     .habilidadeList{
         display: grid;
         grid-template-columns: repeat(4, 1fr); 
