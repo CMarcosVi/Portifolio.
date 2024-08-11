@@ -24,6 +24,9 @@ const IMAGENS_LOGO = ["./assets/imgs/essential/1.svg", "./assets/imgs/essential/
 const LOGO = document.querySelector('#logoNavBar');
 
 const ICON_POINTER_SCROLL = document.getElementById("mouseContainer");
+const BTN_OPEN_IMG_LIST_ECOMMERCE = document.getElementById("Bank");
+const LISTIMGECOMMERCE = document.getElementById("imgsProjectsList");
+const BTN_CLOSE_LIST_IMG_ECOMMERCE = document.getElementById("btnCloseEcommerce");
 
 const modalProject = (btnOpen, modal, btnClosed) => {
     btnOpen.addEventListener("click", () => {
@@ -34,6 +37,8 @@ const modalProject = (btnOpen, modal, btnClosed) => {
         modal.style.display = "none";
     });
 };
+
+
 
 const changeLogoNavBar = () => {
     let indexImagemAtual = 0;
@@ -151,6 +156,7 @@ const initialization = () => {
     modalProject(BTN_OPEN_MODAL_CARS,MODAL_CARS,BTN_CLOSED_MODAL_CARS);
     modalProject(BTN_OPEN_MODAL_AV,MODAL_AV,BTN_CLOSED_MODAL_AV);
     modalProject(BTN_OPEN_MODAL_PROJECTB,MODAL_PROJECTB,BTN_CLOSED_MODAL_PROJECTB);
+    modalProject(BTN_OPEN_IMG_LIST_ECOMMERCE,LISTIMGECOMMERCE,BTN_CLOSE_LIST_IMG_ECOMMERCE);
     document.addEventListener('DOMContentLoaded', Mutation_Icon)
     toggleVisibilityAboutMe(BTN_MODAL_ABOUT_ME, CONTAINER_ABOUT_ME, BTN_CLOSER_MODAL_ABOUT_ME);
 }
