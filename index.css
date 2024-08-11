@@ -397,6 +397,7 @@ body::-webkit-scrollbar-thumb:hover {
 #Bank{
     background-image: url(./assets/imgs/fotosProjetos/Bcommerce.png); 
     background-size: 100% 100%;
+    cursor: pointer;
 }
 #BankCell{
     background-image: url(./assets/imgs/fotosProjetos/bankCell.png);
@@ -670,6 +671,43 @@ body::-webkit-scrollbar-thumb:hover {
     background-color: #f00;
     transition: 1s;
 }
+
+#imgsProjectsList{
+    color: #fff;
+    display: none;
+    top: 0;
+    position:fixed;
+    height: 100vh;
+    width: 100%;
+    background-color: #000000f0;
+    z-index: 999;
+    overflow: scroll;
+}
+#btnCloseEcommerce{
+    height: 25px;
+    width: 25px;
+    background-color: #000;
+    border: #0f4 2px solid;
+    border-radius: .25rem;
+    color: #0f4;
+}
+.imgBCProject{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    overflow: scroll;
+}
+.imgBCProject div{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.imgBCProject img{
+    border: 1px solid #0f4;
+    margin: .2rem;
+    height: 300px;
+}
 /*-----Projects-----*/
 
 /*-----Idiomas-----*/
@@ -738,6 +776,15 @@ body::-webkit-scrollbar-thumb:hover {
 
 /*-----Media-Query-----*/
 @media only screen and (max-width: 840px){
+    .imgBCProject div{
+        display: flex;
+        flex-direction: column;
+    }
+    .imgBCProject img{
+        border: 1px solid #0f4;
+        margin: .2rem 0rem ;
+        height: 150px;
+    }
     .listaIdiomas{
         display: grid;
         grid-template-columns: 1fr 1fr ;
