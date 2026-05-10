@@ -695,12 +695,13 @@
       font-size: .98rem;
     }
 
-    /* posicionamento (5 itens) */
+    /* posicionamento (6 itens) */
     .c1r1{ grid-column:1; grid-row:1; }
     .c1r2{ grid-column:2; grid-row:1; }
     .c2r1{ grid-column:1; grid-row:2; }
     .c2r2{ grid-column:2; grid-row:2; }
     .c3r1{ grid-column:1; grid-row:3; }
+    .c3r2{ grid-column:2; grid-row:3; }
 
     /* Mobile: vira lista vertical */
     @media (max-width: 60rem){
@@ -719,18 +720,25 @@
       .c2r1{ grid-column:1; grid-row:3; }
       .c2r2{ grid-column:1; grid-row:4; }
       .c3r1{ grid-column:1; grid-row:5; }
+      .c3r2{ grid-column:1; grid-row:6; }
 
       .tline__grid::before{
         content:"";
         position:absolute;
-        left: 1.55rem;
+        left: 5.5%;
         top: .4rem;
         bottom: .4rem;
         width: .0625rem;
         background: rgba(255,255,255,.12);
       }
 
-      .tNode{ position:relative; padding-left: 1.15rem; }
+      .about__title{
+        display:flex;
+        gap: 10px;
+      }
+      .about__title span{ display:inline; }
+
+      .tNode{ position:relative; padding: 0; }
 
       .tNode__bubbleRow{ gap: .85rem; justify-content: flex-start; }
 
@@ -968,6 +976,12 @@
       object-fit: contain;
       display:block;
       opacity: .95;
+    }
+    .stackIcon img.companyLogo--gmg{
+      border-radius: .45rem;
+    }
+    .stackIcon img.companyLogo--tjk{
+      filter: invert(1);
     }
     .stackIcon .abbr{
       font-weight: 900;
@@ -2564,7 +2578,7 @@
 
         <div class="about__textCard">
           <p>
-            Sou Marcos, 21 anos, Desenvolvedor Fullstack (Júnior/Pleno). Estudo programação desde os 17 e já atuei em times
+            Sou Marcos, 22 anos, Desenvolvedor Fullstack (Júnior/Pleno). Estudo programação desde os 17 e já atuei em times
             construindo e evoluindo sites e sistemas: implementação de layouts e UX/UI, desenvolvimento de landing pages,
             integrações (como gateways de pagamento), otimizações de performance/SEO, além de testes e suporte contínuo.
           </p>
@@ -2588,7 +2602,7 @@
           </div>
 
           <div class="stat">
-            <div class="stat__value"><span class="count" data-target="2" data-suffix="+">0</span></div>
+            <div class="stat__value">2 anos e 11 meses</div>
             <div class="stat__label">Anos de experiência</div>
             <div class="stat__hint">Construindo e melhorando produtos continuamente.</div>
           </div>
@@ -2624,6 +2638,8 @@
             data-highlights="Implementação de layouts|Diagramação/organização de UI/UX|Desenvolvimento front-end|Desenvolvimento back-end|Ajustes e correções contínuas"
             data-stacks="HTML|CSS|Bootstrap|JavaScript|JQuery|Node.js|PHP|MySQL|Trello|Git"
             data-extras="1 ano e 1 mês|Bibliotecas Utilizadas: Express, Socket.IO, Sequelize, CORS, Mongoose"
+            data-projects-companies="Projetos: sites, plataformas e sistemas empresariais|Empresas: atuação em contexto B2B e soluções corporativas|Participação: desenvolvimento fullstack e melhorias contínuas"
+            data-company-logos="Grupo Boticário::./images/companies/grupoboticario.png|Carrefour::./images/companies/carrefourIcon.png|Governo de Minas Gerais::./images/companies/gmg.jpg"
             aria-label="Abrir detalhes: G3WS"
           >
             <div class="tNode__bubbleRow">
@@ -2652,6 +2668,8 @@
             data-highlights="Criação/alteração de Landing Pages|Criação/alteração de Sites|Projetos internos|Otimizações de performance|Ajustes de SEO"
             data-stacks="HTML|CSS|Bootstrap|JavaScript|JQuery|PHP|Python|WordPress|MySQL"
             data-extras="Presencial • SBC/SP|Rotina de melhorias e entregas"
+            data-projects-companies="Projetos: landing pages, sites e iniciativas internas|Empresas: marketing e aceleração de vendas|Participação: front-end e otimização de performance/SEO"
+            data-company-logos="Bubblebox::./images/companies/bubblebox.png|Clínica Viotto::./images/companies/clinicaviotto.webp|WM Renováveis::./images/companies/wmrenovaveis.png|Boteco em Casa::./images/companies/bemc.png"
             aria-label="Abrir detalhes: Make Acelerador de Vendas"
           >
             <div class="tNode__bubbleRow">
@@ -2675,12 +2693,14 @@
             type="button"
             data-exp
             data-title="Genialle"
-            data-role="Desenvolvimento Web (Temporário)"
+            data-role="Desenvolvedor Líder Web"
             data-when="projeto"
             data-desc="Participação em entregas e evoluções de páginas e funcionalidades, com foco em responsividade, organização do código e experiência final."
             data-highlights="Construção de páginas e componentes|Ajustes e melhorias contínuas|Responsividade|Integrações simples (contato/form)|Organização e padronização"
             data-stacks="HTML|CSS|JavaScript|JQuery|PHP|WordPress|ClickUp"
             data-extras="Experiência prática|Foco em UI e consistência"
+            data-projects-companies="Projetos: páginas e componentes para web|Empresas: entregas em ambiente de agência|Participação: co-participação em melhorias e evolução de features"
+            data-company-logos="Estação 70::./images/companies/logo-clientes-estacao70.png|Drone Livre::./images/companies/dronelivre.png|Vooa::./images/companies/vooa.png|Trato::./images/companies/trato.png|Contabiliza Digital::./images/companies/contabiliza.png|TJK Seguros::./images/companies/tjk.png|Gest Flex::./images/companies/gestflex.png"
             aria-label="Abrir detalhes: Genialle"
           >
             <div class="tNode__bubbleRow">
@@ -2691,9 +2711,9 @@
             </div>
 
             <div class="tNode__card">
-              <p class="tWhen">3 meses</p>
+              <p class="tWhen">6 meses</p>
               <p class="tTitle">Genialle</p>
-              <p class="tRole">Desenvolvimento Web (Temporário)</p>
+              <p class="tRole">Desenvolvedor Líder Web</p>
               <p class="tMini">Evolução de páginas e features com foco em qualidade e responsividade.</p>
             </div>
           </button>
@@ -2704,12 +2724,13 @@
             type="button"
             data-exp
             data-title="Rede Industrial"
-            data-role="Desenvolvedor Fullstack"
-            data-when="nov 2025 — atual"
+            data-role="Desenvolvedor Temporário"
+            data-when="4 meses"
             data-desc="Responsável por desenvolver e dar suporte a sites e sistemas web, integrações (como gateways de pagamento), melhorias de performance/SEO, garantindo qualidade, segurança e testes."
             data-highlights="Sites e sistemas|Gateways de pagamento|Performance/SEO|Qualidade e segurança|Testes"
             data-stacks="HTML|CSS|JavaScript|jQuery|Next.js|Vue.js|PHP|Laravel|MySQL|Insomnia|Burp Suite|Git"
             data-extras="Brasil • Remoto|Atuação em sites e sistemas"
+            data-projects-companies="Projetos: sites, sistemas web e integrações de pagamento|Empresas: indústria e operação digital|Participação: desenvolvimento temporário com foco em entrega e estabilidade"
             aria-label="Abrir detalhes: Rede Industrial"
           >
             <div class="tNode__bubbleRow">
@@ -2720,9 +2741,9 @@
             </div>
 
             <div class="tNode__card">
-              <p class="tWhen">2 meses (até o momento)</p>
+              <p class="tWhen">4 meses</p>
               <p class="tTitle">Rede Industrial</p>
-              <p class="tRole">Desenvolvedor Fullstack</p>
+              <p class="tRole">Desenvolvedor Temporário</p>
               <p class="tMini">Sites/sistemas, integrações de pagamento, performance/SEO e testes.</p>
             </div>
           </button>
@@ -2747,10 +2768,40 @@
             </div>
 
             <div class="tNode__card">
-              <p class="tWhen">7 meses (até o momento)</p>
+              <p class="tWhen">10 meses</p>
               <p class="tTitle">Autonomo</p>
               <p class="tRole">Fullstack</p>
               <p class="tMini">Projetos sob demanda com foco em qualidade e acabamento.</p>
+            </div>
+          </button>
+
+          <!-- 6) Timeware -->
+          <button
+            class="tNode c3r2"
+            type="button"
+            data-exp
+            data-title="Timeware"
+            data-role="Desenvolvedor"
+            data-when="2 meses (atual)"
+            data-desc="Atuação atual no desenvolvimento de aplicações e interfaces web com foco em qualidade, organização de código e evolução contínua de produtos."
+            data-highlights="Desenvolvimento e manutenção de interfaces|Evolução contínua de funcionalidades|Colaboração em projetos web|Padronização e organização de código"
+            data-stacks="HTML|CSS|Less|Sass/SCSS|JavaScript|TypeScript|AngularJS|Angular|C#|Dotnet|React|Node.js|Jira|Azure"
+            data-extras="Experiência atual|Atuação com múltiplas stacks"
+            data-projects-companies="Projetos: aplicações e interfaces web em evolução contínua|Empresas: ambiente corporativo com times multidisciplinares|Participação: desenvolvimento e co-participação em funcionalidades"
+            aria-label="Abrir detalhes: Timeware"
+          >
+            <div class="tNode__bubbleRow">
+              <div class="tBubble" data-dot>
+                <div class="tBubble__logo"><img src="./images/timewarelog.jpeg" alt=""></div>
+                <span class="tBubble__idx">06</span>
+              </div>
+            </div>
+
+            <div class="tNode__card">
+              <p class="tWhen">2 meses (atual)</p>
+              <p class="tTitle">Timeware</p>
+              <p class="tRole">Desenvolvedor</p>
+              <p class="tMini">Desenvolvimento de sistemas novos e manutenção de projetos legado de alta escala</p>
             </div>
           </button>
 
@@ -3102,6 +3153,11 @@
         <div class="modalBlock" id="expModalExtrasBlock">
           <h3>Extras</h3>
           <ul class="list" id="expModalExtras"></ul>
+        </div>
+
+        <div class="modalBlock" id="expModalProjectsCompaniesBlock">
+          <h3>Algumas empresas</h3>
+          <div class="chips" id="expModalCompaniesLogos" role="list" aria-label="Empresas e projetos"></div>
         </div>
 
         <div class="modalBlock" id="expModalProjectsBlock" hidden>
@@ -3468,11 +3524,13 @@ ${msg}
       const highlightsBlock = document.getElementById("expModalHighlightsBlock");
       const stacksBlock = document.getElementById("expModalStacksBlock");
       const extrasBlock = document.getElementById("expModalExtrasBlock");
+      const projectsCompaniesBlock = document.getElementById("expModalProjectsCompaniesBlock");
       const projectsBlock = document.getElementById("expModalProjectsBlock");
 
       const highlightsEl = document.getElementById("expModalHighlights");
       const stacksEl = document.getElementById("expModalStacks");
       const extrasEl = document.getElementById("expModalExtras");
+      const companiesLogosEl = document.getElementById("expModalCompaniesLogos");
       const projectsEl = document.getElementById("expModalProjects");
 
       if (!modal || !closeBtn || !cards.length) return;
@@ -3483,9 +3541,10 @@ ${msg}
         "G3WS": "1 ano e 1 mês",
         "G3WS General Web Solutions": "1 ano e 1 mês",
         "Make Acelerador de Vendas": "10 meses",
-        "Genialle": "3 meses",
-        "Rede Industrial": "2 meses (até o momento)",
-        "Autonomo": "7 meses (até o momento)"
+        "Genialle": "6 meses",
+        "Rede Industrial": "4 meses",
+        "Autonomo": "10 meses",
+        "Timeware": "2 meses (atual)"
       };
 
       const stackIconMap = {
@@ -3495,6 +3554,12 @@ ${msg}
         "javascript": "./images/stacks/javascriptIcon.png",
         "js": "./images/stacks/javascriptIcon.png",
         "typescript": "./images/stacks/typescriptIcon.png",
+        "angularjs": "./images/stacks/angularjsIcon.png",
+        "angular": "./images/stacks/angularIcon.png",
+        "c#": "./images/stacks/csharp.png",
+        "csharp": "./images/stacks/csharp.png",
+        "dotnet": "./images/stacks/dotnetIcon.png",
+        ".net": "./images/stacks/dotnetIcon.png",
         "react": "./images/stacks/reactIcon.png",
         "redux": "./images/stacks/reduxIcon.png",
         "vue": "./images/stacks/vueIcon.png",
@@ -3513,13 +3578,18 @@ ${msg}
         "node.js": "./images/stacks/nodejs.png",
         "nodejs": "./images/stacks/nodejs.png",
         "node": "./images/stacks/nodejs.png",
+        "jira": "./images/stacks/jiraIcon.png",
+        "azure": "./images/stacks/azureIcon.png",
         "trello": "./images/stacks/trelloIcon.png",
         "Trello": "./images/stacks/trelloIcon.png",
         "clickup": "./images/stacks/clickupIcon.png",
         "wordpress": "./images/stacks/wordpressIcon.png",
         "python": "./images/stacks/pythonIcon.png",
         "next.js": "./images/stacks/nextIcon.png",
+        "less": "./images/stacks/lessIcon.png",
         "sass": "./images/stacks/sassIcon.png",
+        "scss": "./images/stacks/sassIcon.png",
+        "sass/scss": "./images/stacks/sassIcon.png",
         "supabase": "./images/stacks/supabaseIcon.png"
       };
 
@@ -3603,6 +3673,74 @@ ${msg}
           tile.appendChild(icon);
           tile.appendChild(label);
           box.appendChild(tile);
+        }
+      }
+
+      function makeInitials(name){
+        return String(name || "")
+          .trim()
+          .split(/\s+/)
+          .slice(0, 2)
+          .map(x => x[0] || "")
+          .join("")
+          .toUpperCase() || "•";
+      }
+
+      function parseCompanyLogos(v){
+        if (!v) return [];
+        return String(v).split("|").map(x => x.trim()).filter(Boolean).map(item => {
+          const [name, src] = item.split("::").map(x => (x || "").trim());
+          return { name, src };
+        }).filter(x => x.name);
+      }
+
+      function renderCompanyLogos(box, items){
+        if (!box) return;
+        box.replaceChildren();
+
+        for (const item of (items || [])){
+          const chip = document.createElement("div");
+          chip.className = "stackTile";
+          chip.setAttribute("role", "listitem");
+          chip.setAttribute("aria-label", item.name);
+
+          const icon = document.createElement("div");
+          icon.className = "stackIcon";
+          icon.setAttribute("aria-hidden", "true");
+
+          if (item.src){
+            const img = document.createElement("img");
+            img.src = item.src;
+            img.alt = "";
+            img.loading = "lazy";
+            if (String(item.name || "").trim().toLowerCase() === "governo de minas gerais"){
+              img.classList.add("companyLogo--gmg");
+            }
+            if (String(item.name || "").trim().toLowerCase() === "tjk seguros"){
+              img.classList.add("companyLogo--tjk");
+            }
+            img.onerror = () => {
+              icon.replaceChildren();
+              const abbr = document.createElement("span");
+              abbr.className = "abbr";
+              abbr.textContent = makeInitials(item.name);
+              icon.appendChild(abbr);
+            };
+            icon.appendChild(img);
+          } else {
+            const abbr = document.createElement("span");
+            abbr.className = "abbr";
+            abbr.textContent = makeInitials(item.name);
+            icon.appendChild(abbr);
+          }
+
+          const label = document.createElement("div");
+          label.className = "stackName";
+          label.textContent = item.name;
+
+          chip.appendChild(icon);
+          chip.appendChild(label);
+          box.appendChild(chip);
         }
       }
 
@@ -3705,16 +3843,22 @@ ${msg}
           const highlights = splitList(btn.dataset.highlights);
           const stacks     = splitList(btn.dataset.stacks);
           const extras     = splitList(btn.dataset.extras);
+          const companyLogos = parseCompanyLogos(btn.dataset.companyLogos);
 
           renderList(highlightsEl, highlights);
           renderStackTiles(stacksEl, stacks);
           renderList(extrasEl, extras);
+          renderCompanyLogos(companiesLogosEl, companyLogos);
+          if (projectsCompaniesBlock) projectsCompaniesBlock.hidden = companyLogos.length === 0;
+          if (companiesLogosEl) companiesLogosEl.hidden = companyLogos.length === 0;
         } else {
           modal.classList.add("modal--autonomo");
 
           if (highlightsBlock) highlightsBlock.hidden = true;
           if (extrasBlock) extrasBlock.hidden = true;
           if (stacksBlock) stacksBlock.hidden = true;
+          if (projectsCompaniesBlock) projectsCompaniesBlock.hidden = true;
+          if (companiesLogosEl) companiesLogosEl.hidden = true;
           if (projectsBlock) projectsBlock.hidden = false;
 
           const projects = parseProjects(btn.dataset.projects);
@@ -3820,7 +3964,7 @@ ${msg}
           {
             name: "HTML",
             desc: "Semântica, acessibilidade e SEO (nível profissional).",
-            time: makeTime("experience", "2 anos e 4 meses"),
+            time: makeTime("experience", "2 anos e 11 meses"),
             certified: true,
             mode: "conceptsOnly",
             libs: [],
@@ -3834,7 +3978,7 @@ ${msg}
           {
             name: "CSS",
             desc: "Layout moderno, design system e microinterações.",
-            time: makeTime("experience", "2 anos e 4 meses"),
+            time: makeTime("experience", "2 anos e 11 meses"),
             certified: true,
             libs: ["Sass/SCSS","Bootstrap","Tailwind","Less","PostCSS","styled-components"],
             concepts: [
@@ -3846,7 +3990,7 @@ ${msg}
           {
             name: "JavaScript",
             desc: "Interatividade, arquitetura de front e consumo de APIs.",
-            time: makeTime("experience", "2 anos e 4 meses"),
+            time: makeTime("experience", "2 anos e 11 meses"),
             certified: true,
             libs: ["jQuery","TypeScript","Alpine.js","React","Vue","Vite","Fetch e Axios"],
             concepts: [
@@ -3889,7 +4033,7 @@ ${msg}
           {
             name: "PHP",
             desc: "APIs/sistemas com arquitetura e segurança.",
-            time: makeTime("experience", "2 anos e 4 meses"),
+            time: makeTime("experience", "2 anos e 11 meses"),
             certified: true,
             libs: ["Laravel","Slim","Symfony (components)","Composer","PDO","Guzzle","Monolog","PHPUnit"],
             concepts: ["MVC/camadas","Validação/sanitização","Auth/RBAC","Middlewares/CSRF","Logs/erros","Pagamentos/Webhooks","Rate limit","Testes"]
@@ -3939,7 +4083,7 @@ ${msg}
           {
             name: "MySQL",
             desc: "Relacional em produção (performance e manutenção).",
-            time: makeTime("experience", "2 anos e 4 meses"),
+            time: makeTime("experience", "2 anos e 11 meses"),
             certified: true,
             mode: "appsOnly",
             apps: ["Modelagem (FK/constraints)","Joins/views","Índices + EXPLAIN","InnoDB/transações","Backup/restore","Otimização de queries","Segurança (privilégios)"]
@@ -3995,7 +4139,7 @@ ${msg}
           {
             name: "CMS",
             desc: "WordPress + ecossistema de plugins e plataformas.",
-            time: makeTime("training", "—"),
+            time: makeTime("experience", "2 anos e 11 meses"),
             certified: true,
             mode: "appsOnly",
             apps: ["WordPress","Elementor","Plugins (geral)","Joomla","Shopify"]
@@ -4003,7 +4147,7 @@ ${msg}
           {
             name: "Sistemas operacionais / Hospedagens",
             desc: "Ambientes e servidores comuns no dia a dia.",
-            time: makeTime("training", "—"),
+            time: makeTime("experience", "2 anos e 11 meses"),
             certified: false,
             mode: "appsOnly",
             apps: ["Windows","Ubuntu","Kali Linux","Debian","Arch Linux","Nginx","Apache"]
@@ -4011,7 +4155,7 @@ ${msg}
           {
             name: "Idiomas",
             desc: "Proficiência para comunicação e trabalho.",
-            time: makeTime("training", "—"),
+            time: makeTime("experience", "2 anos e 11 meses"),
             certified: true,
             mode: "appsOnly",
             apps: ["Português (Nativo)","Inglês (B2)","Espanhol (A2)"]
