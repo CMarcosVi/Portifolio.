@@ -30,8 +30,8 @@
       --ring: 10rem;
 
       /* accent somente na timeline */
-      --accent: rgba(80,150,255,.95);
-      --accent2: rgba(80,150,255,.18);
+      --accent: rgba(205,205,205,.92);
+      --accent2: rgba(205,205,205,.20);
 
       /* =========================
          SCROLLBARS (Chrome/Edge/Safari/Firefox)
@@ -53,9 +53,7 @@
     body{
       margin:0;
       font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      background:
-        radial-gradient(120% 70% at 50% 20%, rgba(255,255,255,.06), transparent 60%),
-        linear-gradient(180deg,var(--bg),var(--bg2));
+      background: #070707;
       color:var(--white);
     }
     body.is-loading{ overflow:hidden; }
@@ -392,6 +390,9 @@
       border-top: .0625rem solid rgba(255,255,255,.06);
       position:relative;
       z-index:2;
+      background:
+        radial-gradient(120% 80% at 50% -10%, rgba(255,255,255,.05), transparent 62%),
+        linear-gradient(180deg, rgba(255,255,255,.015), rgba(255,255,255,.005));
     }
     .section h2{
       margin:0 0 .625rem;
@@ -400,6 +401,17 @@
       line-height: .92;
     }
     .section p{ margin:0; color:rgba(255,255,255,.70); line-height:1.7; }
+
+    #about{
+      background:
+        radial-gradient(90% 80% at 10% 0%, rgba(255,255,255,.06), transparent 60%),
+        linear-gradient(180deg, rgba(255,255,255,.018), rgba(255,255,255,.008));
+    }
+    #experience{
+      background:
+        radial-gradient(90% 90% at 90% 5%, rgba(205,205,205,.14), transparent 62%),
+        linear-gradient(180deg, rgba(255,255,255,.012), rgba(255,255,255,.004));
+    }
 
     /* =========================
        SOBRE MIM
@@ -530,7 +542,7 @@
     }
     .tline__glow{
       fill:none;
-      stroke: rgba(80,150,255,.22);
+      stroke: rgba(205,205,205,.22);
       stroke-width: 10;
       stroke-linecap: round;
       stroke-linejoin: round;
@@ -574,8 +586,9 @@
     .tNode:focus-visible .tNode__card{
       box-shadow:
         0 1.2rem 3.3rem rgba(0,0,0,.42),
-        0 0 0 .125rem rgba(80,150,255,.28);
+        0 0 0 .125rem rgba(255,255,255,.26);
       border-color: rgba(255,255,255,.18);
+      transform: translateY(-.12rem);
     }
 
     .tNode__bubbleRow{
@@ -642,11 +655,12 @@
 
     .tNode:hover .tBubble{
       transform: translateY(-.08rem);
-      border-color: rgba(80,150,255,.42);
+      border-color: rgba(205,205,205,.42);
       box-shadow: 0 1.25rem 3.2rem rgba(0,0,0,.62);
     }
 
     .tNode__card{
+      position: relative;
       border-radius: var(--r-lg);
       border: .0625rem solid rgba(255,255,255,.10);
       background:
@@ -655,16 +669,73 @@
       backdrop-filter: blur(.75rem);
       box-shadow: 0 1.2rem 3.3rem rgba(0,0,0,.38);
       padding: .95rem 1rem 1.05rem;
-      transition: transform .2s ease, border-color .2s ease, background .2s ease, box-shadow .2s ease;
+      transition: transform .28s ease, border-color .24s ease, background .24s ease, box-shadow .28s ease;
+      overflow: hidden;
     }
 
     .tNode:hover .tNode__card{
-      transform: translateY(-.12rem);
-      border-color: rgba(255,255,255,.16);
+      transform: translateX(.18rem);
+      border-color: rgba(255,255,255,.34);
       border-radius: 10px;
       background:
-        radial-gradient(70% 70% at 18% 12%, rgba(255,255,255,.08), transparent 55%),
+        radial-gradient(70% 70% at 24% 12%, rgba(255,255,255,.12), transparent 55%),
         rgba(255,255,255,.04);
+      box-shadow: 0 1.25rem 3.2rem rgba(0,0,0,.46);
+    }
+    .tNode__card > .tHoverSweep{
+      position:absolute;
+      inset:-35% auto -35% -45%;
+      width: 40%;
+      background: linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,.16), rgba(255,255,255,0));
+      transform: skewX(-16deg) translateX(0);
+      opacity: 0;
+      pointer-events:none;
+    }
+    .tNode:hover .tNode__card > .tHoverSweep{
+      opacity: 1;
+      animation: tHoverSweepMove .85s cubic-bezier(.22,.61,.36,1) 1;
+    }
+    @keyframes tHoverSweepMove{
+      0%{ transform: skewX(-16deg) translateX(0); }
+      100%{ transform: skewX(-16deg) translateX(360%); }
+    }
+    .tNode__card > .tClickHint{
+      position:absolute;
+      right: .72rem;
+      bottom: .66rem;
+      width: 1.5rem;
+      height: 1.5rem;
+      border-radius: 999rem;
+      border: .0625rem solid rgba(255,255,255,.28);
+      background: rgba(255,255,255,.04);
+      display:grid;
+      place-items:center;
+      color: rgba(255,255,255,.9);
+      font-size: .78rem;
+      line-height: 1;
+      pointer-events:none;
+      animation: tClickHintPulse 1.45s ease-in-out infinite;
+      box-shadow: 0 0 0 0 rgba(255,255,255,.25);
+    }
+    .tNode__card > .tClickHint::before{
+      content:"↗";
+      transform: translate(-.01rem, .01rem);
+    }
+    .tNode:hover .tNode__card > .tClickHint,
+    .tNode:focus-visible .tNode__card > .tClickHint{
+      border-color: rgba(255,255,255,.5);
+      background: rgba(255,255,255,.12);
+      animation-duration: .9s;
+    }
+    @keyframes tClickHintPulse{
+      0%, 100%{
+        transform: translateY(0) scale(1);
+        box-shadow: 0 0 0 0 rgba(255,255,255,.24);
+      }
+      50%{
+        transform: translateY(-.05rem) scale(1.04);
+        box-shadow: 0 0 0 .42rem rgba(255,255,255,0);
+      }
     }
 
     .tWhen{
@@ -977,6 +1048,11 @@
       display:block;
       opacity: .95;
     }
+    #expModalCompaniesLogos .stackIcon img{
+      width: 65%;
+      height: 65%;
+      border-radius: .5rem;
+    }
     .stackIcon img.companyLogo--gmg{
       border-radius: .45rem;
     }
@@ -1111,6 +1187,9 @@
       border-top: .0625rem solid rgba(255,255,255,.06);
       position:relative;
       z-index:2;
+      background:
+        radial-gradient(85% 90% at 15% 0%, rgba(255,255,255,.05), transparent 62%),
+        linear-gradient(180deg, rgba(255,255,255,.014), rgba(255,255,255,.006));
     }
 
     .skillsHead{
@@ -1560,6 +1639,9 @@
       border-top: .0625rem solid rgba(255,255,255,.06);
       position:relative;
       z-index:2;
+      background:
+        radial-gradient(85% 90% at 85% 0%, rgba(255,255,255,.05), transparent 62%),
+        linear-gradient(180deg, rgba(255,255,255,.013), rgba(255,255,255,.005));
     }
     .projHead{
       display:flex;
@@ -1811,6 +1893,7 @@
       position:relative;
       padding: 110px 0 120px;
       background:
+        radial-gradient(90% 100% at 50% -10%, rgba(205,205,205,.10), transparent 58%),
         linear-gradient(180deg, var(--bg) 0%, var(--bg2) 100%);
       border-top: 1px solid var(--line);
     }
@@ -2666,7 +2749,7 @@
             data-role="Desenvolvedor Fullstack Jr (tempo integral)"
             data-desc="Desenvolvimento e manutenção de landing pages e sites, além de projetos internos, com atenção a performance e otimizações (incluindo SEO)."
             data-highlights="Criação/alteração de Landing Pages|Criação/alteração de Sites|Projetos internos|Otimizações de performance|Ajustes de SEO"
-            data-stacks="HTML|CSS|Bootstrap|JavaScript|JQuery|PHP|Python|WordPress|MySQL"
+            data-stacks="HTML|CSS|Bootstrap|SCSS|JavaScript|JQuery|PHP|Python|WordPress|MySQL"
             data-extras="Presencial • SBC/SP|Rotina de melhorias e entregas"
             data-projects-companies="Projetos: landing pages, sites e iniciativas internas|Empresas: marketing e aceleração de vendas|Participação: front-end e otimização de performance/SEO"
             data-company-logos="Bubblebox::./images/companies/bubblebox.png|Clínica Viotto::./images/companies/clinicaviotto.webp|WM Renováveis::./images/companies/wmrenovaveis.png|Boteco em Casa::./images/companies/bemc.png"
@@ -3145,19 +3228,14 @@
           <ul class="list" id="expModalHighlights"></ul>
         </div>
 
-        <div class="modalBlock" id="expModalStacksBlock">
-          <h3>Stack</h3>
-          <div class="chips" id="expModalStacks" role="list"></div>
-        </div>
-
-        <div class="modalBlock" id="expModalExtrasBlock">
-          <h3>Extras</h3>
-          <ul class="list" id="expModalExtras"></ul>
-        </div>
-
         <div class="modalBlock" id="expModalProjectsCompaniesBlock">
           <h3>Algumas empresas</h3>
           <div class="chips" id="expModalCompaniesLogos" role="list" aria-label="Empresas e projetos"></div>
+        </div>
+
+        <div class="modalBlock" id="expModalStacksBlock">
+          <h3>Stack</h3>
+          <div class="chips" id="expModalStacks" role="list"></div>
         </div>
 
         <div class="modalBlock" id="expModalProjectsBlock" hidden>
@@ -3523,17 +3601,31 @@ ${msg}
 
       const highlightsBlock = document.getElementById("expModalHighlightsBlock");
       const stacksBlock = document.getElementById("expModalStacksBlock");
-      const extrasBlock = document.getElementById("expModalExtrasBlock");
       const projectsCompaniesBlock = document.getElementById("expModalProjectsCompaniesBlock");
       const projectsBlock = document.getElementById("expModalProjectsBlock");
 
       const highlightsEl = document.getElementById("expModalHighlights");
       const stacksEl = document.getElementById("expModalStacks");
-      const extrasEl = document.getElementById("expModalExtras");
       const companiesLogosEl = document.getElementById("expModalCompaniesLogos");
       const projectsEl = document.getElementById("expModalProjects");
 
       if (!modal || !closeBtn || !cards.length) return;
+
+      for (const btn of cards){
+        const card = btn.querySelector(".tNode__card");
+        if (!card) continue;
+        if (!card.querySelector(".tHoverSweep")){
+          const sweep = document.createElement("span");
+          sweep.className = "tHoverSweep";
+          sweep.setAttribute("aria-hidden", "true");
+          card.appendChild(sweep);
+        }
+        if (card.querySelector(".tClickHint")) continue;
+        const hint = document.createElement("span");
+        hint.className = "tClickHint";
+        hint.setAttribute("aria-hidden", "true");
+        card.appendChild(hint);
+      }
 
       let lastFocus = null;
 
@@ -3837,17 +3929,14 @@ ${msg}
         if (variant !== "autonomo"){
           if (highlightsBlock) highlightsBlock.hidden = false;
           if (stacksBlock) stacksBlock.hidden = false;
-          if (extrasBlock) extrasBlock.hidden = false;
           if (projectsBlock) projectsBlock.hidden = true;
 
           const highlights = splitList(btn.dataset.highlights);
           const stacks     = splitList(btn.dataset.stacks);
-          const extras     = splitList(btn.dataset.extras);
           const companyLogos = parseCompanyLogos(btn.dataset.companyLogos);
 
           renderList(highlightsEl, highlights);
           renderStackTiles(stacksEl, stacks);
-          renderList(extrasEl, extras);
           renderCompanyLogos(companiesLogosEl, companyLogos);
           if (projectsCompaniesBlock) projectsCompaniesBlock.hidden = companyLogos.length === 0;
           if (companiesLogosEl) companiesLogosEl.hidden = companyLogos.length === 0;
@@ -3855,7 +3944,6 @@ ${msg}
           modal.classList.add("modal--autonomo");
 
           if (highlightsBlock) highlightsBlock.hidden = true;
-          if (extrasBlock) extrasBlock.hidden = true;
           if (stacksBlock) stacksBlock.hidden = true;
           if (projectsCompaniesBlock) projectsCompaniesBlock.hidden = true;
           if (companiesLogosEl) companiesLogosEl.hidden = true;
@@ -4934,12 +5022,18 @@ ${msg}
         badge: "Genialle",
         where: "Genialle",
         when: "2025",
-        intro: "Alguns sites desenvolvidos na Genialle",
-        images: ["./images/projects/gll/Estacao70.png"],
+        intro: "Projetos desenvolvidos na Genialle: Estação 70, Drone Livre, Vooa, Trato e Gest Flex.",
+        images: [
+          "./images/projects/gll/Estacao70.png",
+          "./images/projects/gll/dronelivresite.png",
+          "./images/projects/gll/vooasite.png",
+          "./images/projects/gll/tratosite.png",
+          "./images/projects/gll/gestflexsite.png"
+        ],
         tech: ["WordPress", "Elementor"],
-        how: ["Componentização e responsivo", "Integrações simples", "Padronização"],
-        features: ["Componentes", "Responsivo", "Padronização", "Integrações"],
-        concepts: ["UI consistente","Organização","Qualidade","Entrega"],
+        how: ["Componentização e responsivo", "Integrações simples", "Padronização", "Evolução contínua de páginas"],
+        features: ["Componentes", "Responsivo", "Padronização", "Integrações", "Variações de layout por projeto"],
+        concepts: ["UI consistente","Organização","Qualidade","Entrega","Escalabilidade visual"],
         links: []
       },
     ];
